@@ -20,16 +20,27 @@ filetype plugin on
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in vim 
 
+set cmdheight=1
+" set noshowcmd
+set noshowmode              " not show mose down
+" set noruler
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'tomasiser/vim-code-dark'
+Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+colorscheme codedark
 
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+source $HOME/.config/nvim/plug-config/coc.vim
+
