@@ -1,1 +1,1 @@
-linux-configs
+Repository for all my dot-files.
